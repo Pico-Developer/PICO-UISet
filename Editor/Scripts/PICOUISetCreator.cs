@@ -1,0 +1,93 @@
+/*******************************************************************************
+Copyright © 2015-2022 PICO Technology Co., Ltd.All rights reserved.  
+
+NOTICE：All information contained herein is, and remains the property of 
+PICO Technology Co., Ltd. The intellectual and technical concepts 
+contained herein are proprietary to PICO Technology Co., Ltd. and may be 
+covered by patents, patents in process, and are protected by trade secret or 
+copyright law. Dissemination of this information or reproduction of this 
+material is strictly forbidden unless prior written permission is obtained from
+PICO Technology Co., Ltd. 
+*******************************************************************************/
+using UnityEngine;
+using UnityEditor;
+using UnityEngine.UI;
+#if UNITY_EDITOR
+public class PICOUISetCreator : MonoBehaviour
+{
+    private const string PICOUISetPrafabsPath = "Packages/com.unity.xr.picoxr.uiset/Assets/Prefabs";
+    private static void CreatePrefab(in MenuCommand menuCommand, string prefabPath, string name)
+    {
+        GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+        if (prefab == null)
+        {
+            Debug.Log($"Custom Slider prefab not found at '{prefabPath}'. Creating a default Slider instead.");
+            return;
+        }
+        GameObject parent = menuCommand.context as GameObject;
+        if (parent == null || parent.GetComponentInParent<Canvas>() == null)
+        {
+            Canvas canvas = FindFirstObjectByType<Canvas>();
+            if (canvas != null)
+            {
+                parent = canvas.gameObject;
+            }
+            else
+            {
+                parent = new GameObject("Canvas");
+                parent.AddComponent<Canvas>();
+                parent.AddComponent<CanvasScaler>();
+                parent.AddComponent<GraphicRaycaster>();
+                Undo.RegisterCreatedObjectUndo(parent, "Create Canvas");
+            }
+        }
+        GameObject sliderInstance = PrefabUtility.InstantiatePrefab(prefab, parent.transform) as GameObject;
+        sliderInstance.name = name;
+        Undo.RegisterCreatedObjectUndo(sliderInstance, "Create " + sliderInstance.name);
+        Selection.activeGameObject = sliderInstance;
+        LayoutRebuilder.MarkLayoutForRebuild(sliderInstance.transform as RectTransform);
+    }
+    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Small Slider")]
+    public static void CreateSmallSlider(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Small_Stepless.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Small Slider");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Regular Slider")]
+    public static void CreateRegularSlider(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Regular_Stepless.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Regular Slider");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Regular Slider With Icon")]
+    public static void CreateRegularWithIconSlider(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Regular_Icon_Stepless.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Regular Slider With Icon");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Max Slider")]
+    public static void CreateMaxSlider(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Max_Stepless.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Max Slider");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Max Slider With Icon")]
+    public static void CreateMaxWithIconSlider(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Max_Icon_Stepless.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Max Slider With Icon");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/Slider/Segment/Small Slider")]
+    public static void CreateSmallSegmentSlider(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Small_Segment.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Segment Small Slider");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/Slider/Segment/Regular Slider")]
+    public static void CreateRegularSegmentSlider(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Regular_Segment.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Segment Regular Slider");
+    }
+}
+#endif

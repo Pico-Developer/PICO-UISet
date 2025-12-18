@@ -1,0 +1,16 @@
+# Object file
+*.o
+
+.vscode/
+.vs/
+sdk/Runtime/obj/
+sdk/Runtime/bin/
+sdk/Runtime/obj/Runtime.csproj.nuget.g.targets
+sdk/Runtime/obj/Runtime.csproj.nuget.g.props
+sdk/Runtime/obj/Runtime.csproj.nuget.cache
+sdk/Runtime/obj/project.assets.json
+sdk/Runtime/obj/Debug/netstandard2.0/Runtime.csprojAssemblyReference.cache
+sdk/Runtime/obj/Debug/netstandard2.0/Runtime.csproj.CoreCompileInputs.cache
+sdk/Runtime/obj/Debug/netstandard2.0/Runtime.assets.cache
+sdk/Assets/.DS_Store
+*.DS_Store

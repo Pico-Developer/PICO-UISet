@@ -1,0 +1,17 @@
+{
+  "name": "com.unity.xr.picoxr.uiset",
+  "displayName": "PICO UI Set",
+  "version": "0.0.1",
+  "unity": "2022.3",
+  "description": "A convenient UI 3D construction tool based on Unity GUI.",
+  "keywords": [
+    "picoxr",
+    "xr",
+    "vr",
+    "GUI"
+  ],
+  "dependencies": {
+    "com.unity.ugui": "1.0.0",
+    "com.unity.xr.interaction.toolkit": "2.0.0"
+  }
+}
