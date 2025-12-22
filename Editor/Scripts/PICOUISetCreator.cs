@@ -21,7 +21,7 @@ public class PICOUISetCreator : MonoBehaviour
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
         if (prefab == null)
         {
-            Debug.Log($"Custom Slider prefab not found at '{prefabPath}'. Creating a default Slider instead.");
+            Debug.Log($"Custom prefab {name} not found at '{prefabPath}'. Creating a default Slider instead.");
             return;
         }
         GameObject parent = menuCommand.context as GameObject;
@@ -88,6 +88,24 @@ public class PICOUISetCreator : MonoBehaviour
     {
         string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Regular_Segment.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Segment Regular Slider");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/List/List Item")]
+    public static void CreateListItem(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/List/PICOListItem.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] List Item");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/ToolBar/ToolBar Icon")]
+    public static void CreateToolBarIcon(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/List/PICOToolBar_Icon.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] ToolBar Word");
+    }
+    [MenuItem("GameObject/UI/PICOUISet/ToolBar/ToolBar Word")]
+    public static void CreateToolBarWord(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUISetPrafabsPath + "/List/PICOToolBar_Word.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] ToolBar Word");
     }
 }
 #endif
