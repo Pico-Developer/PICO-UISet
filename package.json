@@ -1,11 +1,11 @@
 {
-  "name": "com.unity.xr.picoxr.uiset",
-  "displayName": "PICO UI Set",
-  "version": "0.0.1",
+  "name": "com.bytedance.pico.spatialui",
+  "displayName": "PICO Spatial UI",
+  "version": "0.0.2",
   "unity": "2022.3",
   "description": "A convenient UI 3D construction tool based on Unity GUI.",
   "keywords": [
-    "picoxr",
+    "pico",
     "xr",
     "vr",
     "GUI"

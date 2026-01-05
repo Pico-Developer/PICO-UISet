@@ -13,9 +13,9 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
 #if UNITY_EDITOR
-public class PICOUISetCreator : MonoBehaviour
+public class PICOSpatialUICreator : MonoBehaviour
 {
-    private const string PICOUISetPrafabsPath = "Packages/com.unity.xr.picoxr.uiset/Assets/Prefabs";
+    private const string PICOSpatialUIPrafabsPath = "Packages/com.bytedance.pico.spatialui/Assets/Prefabs";
     private static void CreatePrefab(in MenuCommand menuCommand, string prefabPath, string name)
     {
         GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
@@ -47,65 +47,94 @@ public class PICOUISetCreator : MonoBehaviour
         Selection.activeGameObject = sliderInstance;
         LayoutRebuilder.MarkLayoutForRebuild(sliderInstance.transform as RectTransform);
     }
-    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Small Slider")]
+    // Slider
+    [MenuItem("GameObject/UI/PICOSpatialUI/Slider/Stepless/Small Slider")]
     public static void CreateSmallSlider(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Small_Stepless.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/Slider/PICOSlider_Small_Stepless.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Small Slider");
     }
-    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Regular Slider")]
+    [MenuItem("GameObject/UI/PICOSpatialUI/Slider/Stepless/Regular Slider")]
     public static void CreateRegularSlider(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Regular_Stepless.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/Slider/PICOSlider_Regular_Stepless.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Regular Slider");
     }
-    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Regular Slider With Icon")]
+    [MenuItem("GameObject/UI/PICOSpatialUI/Slider/Stepless/Regular Slider With Icon")]
     public static void CreateRegularWithIconSlider(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Regular_Icon_Stepless.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/Slider/PICOSlider_Regular_Icon_Stepless.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Regular Slider With Icon");
     }
-    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Max Slider")]
+    [MenuItem("GameObject/UI/PICOSpatialUI/Slider/Stepless/Max Slider")]
     public static void CreateMaxSlider(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Max_Stepless.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/Slider/PICOSlider_Max_Stepless.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Max Slider");
     }
-    [MenuItem("GameObject/UI/PICOUISet/Slider/Stepless/Max Slider With Icon")]
+    [MenuItem("GameObject/UI/PICOSpatialUI/Slider/Stepless/Max Slider With Icon")]
     public static void CreateMaxWithIconSlider(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Max_Icon_Stepless.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/Slider/PICOSlider_Max_Icon_Stepless.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Stepless Max Slider With Icon");
     }
-    [MenuItem("GameObject/UI/PICOUISet/Slider/Segment/Small Slider")]
+    [MenuItem("GameObject/UI/PICOSpatialUI/Slider/Segment/Small Slider")]
     public static void CreateSmallSegmentSlider(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Small_Segment.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/Slider/PICOSlider_Small_Segment.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Segment Small Slider");
     }
-    [MenuItem("GameObject/UI/PICOUISet/Slider/Segment/Regular Slider")]
+    [MenuItem("GameObject/UI/PICOSpatialUI/Slider/Segment/Regular Slider")]
     public static void CreateRegularSegmentSlider(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/Slider/PICOSlider_Regular_Segment.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/Slider/PICOSlider_Regular_Segment.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Segment Regular Slider");
     }
-    [MenuItem("GameObject/UI/PICOUISet/List/List Item")]
+    // List
+    [MenuItem("GameObject/UI/PICOSpatialUI/List/List Item")]
     public static void CreateListItem(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/List/PICOListItem.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/List/PICOListItem.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] List Item");
     }
-    [MenuItem("GameObject/UI/PICOUISet/ToolBar/ToolBar Icon")]
+    // ToolBar
+    [MenuItem("GameObject/UI/PICOSpatialUI/ToolBar/ToolBar Icon")]
     public static void CreateToolBarIcon(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/List/PICOToolBar_Icon.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/List/PICOToolBar_Icon.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] ToolBar Word");
     }
-    [MenuItem("GameObject/UI/PICOUISet/ToolBar/ToolBar Word")]
+    [MenuItem("GameObject/UI/PICOSpatialUI/ToolBar/ToolBar Word")]
     public static void CreateToolBarWord(MenuCommand menuCommand)
     {
-        string prefabPath = PICOUISetPrafabsPath + "/List/PICOToolBar_Word.prefab";
+        string prefabPath = PICOSpatialUIPrafabsPath + "/List/PICOToolBar_Word.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] ToolBar Word");
+    }
+    // Side Navigation
+    [MenuItem("GameObject/UI/PICOSpatialUI/Side Navigation/Side Navigation")]
+    public static void CreateSideNavigation(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOSpatialUIPrafabsPath + "/SideNavigation/PICOSideNavigation.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Side Navigation");
+    }
+    [MenuItem("GameObject/UI/PICOSpatialUI/Side Navigation/Side Navigation Item")]
+    public static void CreateSideNavigatioItem(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOSpatialUIPrafabsPath + "/SideNavigation/PICOSideNavigationItem.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Side Navigation Item");
+    }
+    // TabBar
+    [MenuItem("GameObject/UI/PICOSpatialUI/TabBar/PICOTabBar")]
+    public static void CreateTabBar(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOSpatialUIPrafabsPath + "/TabBar/PICOTabBar_Vertical.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] PICOTabBar");
+    }
+    [MenuItem("GameObject/UI/PICOSpatialUI/TabBar/PICOTabBar Item")]
+    public static void CreateTabBarItem(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOSpatialUIPrafabsPath + "/TabBar/PICOTabBarItem.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] PICOTabBar Item");
     }
 }
 #endif

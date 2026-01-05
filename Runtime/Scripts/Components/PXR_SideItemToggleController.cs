@@ -17,11 +17,11 @@ public class PXR_SideItemToggleController : MonoBehaviour
     public GameObject group;
     public Image icon;
     public Toggle toggle;
-    // Update is called once per frame
     public void Toggle()
     {
-        // _isOpen = toggle.isOn;
+        if (group.transform.childCount <= 0) return;
         group.SetActive(toggle.isOn);
-        icon.transform.eulerAngles = toggle.isOn?Vector3.back*90f:Vector3.zero;
+        if (icon == null) return;
+        icon.transform.eulerAngles = toggle.isOn ? Vector3.back * 90f : Vector3.zero;
     }
 }

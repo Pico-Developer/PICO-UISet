@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 2818855451777804397}
   - component: {fileID: 6746556235822925681}
   m_Layer: 5
-  m_Name: TabBarItem
+  m_Name: PICOTabBarItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
