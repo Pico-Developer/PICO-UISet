@@ -84,7 +84,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
             }
             if (slider.value <= iconInfoList[i].scope)
             {
-                fillImage.sprite = iconInfoList[i].icon;
+                if(fillImage!=null) fillImage.sprite = iconInfoList[i].icon;
                 return;
             }
         }
