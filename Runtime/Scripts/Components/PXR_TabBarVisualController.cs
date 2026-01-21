@@ -31,7 +31,11 @@ public class PXR_TabBarVisualController : MonoBehaviour
     }
     public void ChangeMessageCount(int amount)
     {
-        if (amount < 0) return;
+        if (amount < 0)
+        {
+            Debug.Log("The number must be greater than 0!");
+            return;
+        }
         messageCount = amount;
         var count = Mathf.Min(Mathf.Abs(amount).ToString().Length, maxCount);
         badge.sizeDelta = new Vector2(defaultSize + (count - 1) * step, defaultSize);

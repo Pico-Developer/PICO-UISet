@@ -1,6 +1,6 @@
 {
-  "name": "com.bytedance.pico.spatialui",
-  "displayName": "PICO Spatial UI",
+  "name": "com.bytedance.pico.ui",
+  "displayName": "PICO UI",
   "version": "0.0.2",
   "unity": "2022.3",
   "description": "A convenient UI 3D construction tool based on Unity GUI.",
