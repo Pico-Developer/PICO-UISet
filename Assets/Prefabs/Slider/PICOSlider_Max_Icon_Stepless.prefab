@@ -53,7 +53,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1993717141508272067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -219466106, guid: aed934811164f40a8ae809e3faf501e6, type: 3}
+  m_Sprite: {fileID: -1611938547, guid: aed934811164f40a8ae809e3faf501e6, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -219,7 +219,7 @@ RectTransform:
   m_Father: {fileID: 7196504115179014035}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 48, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -454,7 +454,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 5673155128000462528}
-  m_FillRect: {fileID: 0}
+  m_FillRect: {fileID: 837067545956183394}
   m_HandleRect: {fileID: 5014414361615243778}
   m_Direction: 0
   m_MinValue: 0
@@ -479,7 +479,7 @@ MonoBehaviour:
   rect: {fileID: 0}
   slider: {fileID: 887415234952428006}
   scope: 0.05
-  fillImage: {fileID: 0}
+  fillImage: {fileID: 3583402902624577335}
   iconInfoList:
   - icon: {fileID: -1611938547, guid: aed934811164f40a8ae809e3faf501e6, type: 3}
     scope: 0
