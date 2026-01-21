@@ -13,6 +13,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 [RequireComponent(typeof(Slider))]
 public class PXR_SliderVisualController : PXR_UIInputHandler
@@ -26,7 +28,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     public Slider slider;
     [Range(0, 1)] public float scope;
     public Image fillImage;
-    public IconInfo[] iconInfoList;
+    public List<IconInfo> iconInfoList;
     public GameObject handle;
     private bool isMultiIcon = false;
     private bool isHover = false;
@@ -36,11 +38,15 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     void Awake()
     {
         if (slider == null) slider = GetComponent<Slider>();
+    }
+    void Start()
+    {
         if (iconInfoList != null)
         {
-            isMultiIcon = iconInfoList.Length > 1;
+            isMultiIcon = iconInfoList.Count > 1;
         }
         VisuallyHander();
+        iconInfoList = iconInfoList.OrderBy(i => i.scope).ToList();
     }
     void Update()
     {
@@ -50,7 +56,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     {
         if (iconInfoList != null)
         {
-            isMultiIcon = iconInfoList.Length > 1;
+            isMultiIcon = iconInfoList.Count > 1;
         }
         VisuallyHander();
     }
@@ -75,7 +81,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     private void IconHandler()
     {
         if (!isMultiIcon) return;
-        for (var i = 0; i < iconInfoList.Length; i++)
+        for (var i = 0; i < iconInfoList.Count; i++)
         {
             if (iconInfoList[i].icon == null)
             {
@@ -84,7 +90,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
             }
             if (slider.value <= iconInfoList[i].scope)
             {
-                if(fillImage!=null) fillImage.sprite = iconInfoList[i].icon;
+                if (fillImage != null) fillImage.sprite = iconInfoList[i].icon;
                 return;
             }
         }
