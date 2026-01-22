@@ -103,7 +103,7 @@ public class PICOUICreator : MonoBehaviour
     public static void CreateToolBarIcon(MenuCommand menuCommand)
     {
         string prefabPath = PICOUIPrafabsPath + "/ToolBar/PICOToolBar_Icon.prefab";
-        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] ToolBar Word");
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] ToolBar Icon");
     }
     [MenuItem("GameObject/UI/PICO-UI/ToolBar/ToolBar Word")]
     public static void CreateToolBarWord(MenuCommand menuCommand)
