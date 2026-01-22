@@ -34,6 +34,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     private bool isHover = false;
     public bool canHideHandle;
     private bool IsShowHandle => !canHideHandle || isHover;
+    private bool IsMultiIcon => iconInfoList != null && iconInfoList.Count > 1;
 
     void Awake()
     {
@@ -41,10 +42,6 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     }
     void Start()
     {
-        if (iconInfoList != null)
-        {
-            isMultiIcon = iconInfoList.Count > 1;
-        }
         VisuallyHander();
         iconInfoList = iconInfoList.OrderBy(i => i.scope).ToList();
     }
@@ -54,11 +51,11 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     }
     private void OnValidate()
     {
-        if (iconInfoList != null)
+        if (fillImage != null)
         {
-            isMultiIcon = iconInfoList.Count > 1;
+            fillImage.gameObject.SetActive(iconInfoList != null && iconInfoList.Count > 0);
+            fillImage.sprite = (iconInfoList != null && iconInfoList.Count > 1)?iconInfoList[0].icon:null;
         }
-        VisuallyHander();
     }
     private void VisuallyHander()
     {
@@ -80,18 +77,19 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     }
     private void IconHandler()
     {
-        if (!isMultiIcon) return;
-        for (var i = 0; i < iconInfoList.Count; i++)
+        if (IsMultiIcon && fillImage != null)
         {
-            if (iconInfoList[i].icon == null)
+            for (var i = 0; i < iconInfoList.Count; i++)
             {
-                Debug.Log("There is no configuration icon");
-                return;
-            }
-            if (slider.value <= iconInfoList[i].scope)
-            {
-                if (fillImage != null) fillImage.sprite = iconInfoList[i].icon;
-                return;
+                if (slider.value <= iconInfoList[i].scope)
+                {
+                    if (iconInfoList[i].icon == null)
+                    {
+                        Debug.LogWarning("There is no configuration icon, Please ensure that all ICONS in the list have been configured; otherwise, the effect may not meet expectations");
+                    }
+                    fillImage.sprite = iconInfoList[i].icon;
+                    return;
+                }
             }
         }
     }
