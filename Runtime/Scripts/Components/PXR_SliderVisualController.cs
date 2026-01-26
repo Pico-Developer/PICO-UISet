@@ -30,7 +30,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     public Image fillImage;
     public List<IconInfo> iconInfoList;
     public GameObject handle;
-    private bool isMultiIcon = false;
+    private readonly bool isMultiIcon = false;
     private bool isHover = false;
     public bool canHideHandle;
     private bool IsShowHandle => !canHideHandle || isHover;
@@ -53,8 +53,9 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
     {
         if (fillImage != null)
         {
-            fillImage.gameObject.SetActive(iconInfoList != null && iconInfoList.Count > 0);
-            fillImage.sprite = (iconInfoList != null && iconInfoList.Count > 1)?iconInfoList[0].icon:null;
+            var isShowIcon = iconInfoList != null && iconInfoList.Count > 0;
+            fillImage.gameObject.SetActive(isShowIcon);
+            fillImage.sprite = isShowIcon?iconInfoList[0].icon:null;
         }
     }
     private void VisuallyHander()
@@ -83,10 +84,7 @@ public class PXR_SliderVisualController : PXR_UIInputHandler
             {
                 if (slider.value <= iconInfoList[i].scope)
                 {
-                    if (iconInfoList[i].icon == null)
-                    {
-                        Debug.LogWarning("There is no configuration icon, Please ensure that all ICONS in the list have been configured; otherwise, the effect may not meet expectations");
-                    }
+                    if (iconInfoList[i].icon == null) Debug.LogWarning("There is no configuration icon, Please ensure that all ICONS in the list have been configured; otherwise, the effect may not meet expectations");
                     fillImage.sprite = iconInfoList[i].icon;
                     return;
                 }
