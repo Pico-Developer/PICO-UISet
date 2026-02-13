@@ -910,7 +910,7 @@ TextureImporter:
         width: 80
         height: 80
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -919,6 +919,50 @@ TextureImporter:
       bones: []
       spriteID: 94d26ff52cd794d47a9608d4bbd01030
       internalID: -1322193913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PICOUI_Sprites_switch_on
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 574
+        width: 80
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5983fa324a48241f695302d4c94926fe
+      internalID: -388111641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PICOUI_Sprites_switch_off
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 574
+        width: 80
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1851917ec4be049edaefcbb7fa3270be
+      internalID: -721238193
       vertices: []
       indices: 
       edges: []
@@ -968,6 +1012,8 @@ TextureImporter:
       PICOUI_Sprites_search: -843726709
       PICOUI_Sprites_select_no: -658201652
       PICOUI_Sprites_sun: 1287375283
+      PICOUI_Sprites_switch_off: -721238193
+      PICOUI_Sprites_switch_on: -388111641
       PICOUI_Sprites_time: 1465368939
       PICOUI_Sprites_trash: -269052376
       PICOUI_Sprites_up: -2121767500

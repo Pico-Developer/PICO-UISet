@@ -324,7 +324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8970594050567294847, guid: 75749546e8a21482299fc7ea45f7d5ce, type: 3}
       propertyPath: m_Name
-      value: MenuItem (3)
+      value: '[PICO UISet] Menu Item'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8970594050567294847, guid: 75749546e8a21482299fc7ea45f7d5ce, type: 3}
       propertyPath: m_Name
-      value: MenuItem
+      value: '[PICO UISet] Menu Item'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -720,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8970594050567294847, guid: 75749546e8a21482299fc7ea45f7d5ce, type: 3}
       propertyPath: m_Name
-      value: MenuItem (2)
+      value: '[PICO UISet] Menu Item'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -918,7 +918,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8970594050567294847, guid: 75749546e8a21482299fc7ea45f7d5ce, type: 3}
       propertyPath: m_Name
-      value: MenuItem (4)
+      value: '[PICO UISet] Menu Item'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1116,7 +1116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8970594050567294847, guid: 75749546e8a21482299fc7ea45f7d5ce, type: 3}
       propertyPath: m_Name
-      value: MenuItem (1)
+      value: '[PICO UISet] Menu Item'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
