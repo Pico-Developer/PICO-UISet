@@ -137,5 +137,29 @@ public class PICOUICreator : MonoBehaviour
         string prefabPath = PICOUIPrafabsPath + "/TabBar/PICOTabBarItem.prefab";
         CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] PICOTabBar Item");
     }
+    [MenuItem("GameObject/UI/PICO-UI/Switch")]
+    public static void CreateSwitch(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUIPrafabsPath + "/Switch/PICOSwitch.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] PICOSwitch");
+    }
+    [MenuItem("GameObject/UI/PICO-UI/Menu/Menu")]
+    public static void CreateMenu(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUIPrafabsPath + "/Menu/Menu.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Menu");
+    }
+    [MenuItem("GameObject/UI/PICO-UI/Menu/MenuItem")]
+    public static void CreateMenuItem(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUIPrafabsPath + "/Menu/MenuItem.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] Menu Item");
+    }
+    [MenuItem("GameObject/UI/PICO-UI/Panel")]
+    public static void CreatePanel(MenuCommand menuCommand)
+    {
+        string prefabPath = PICOUIPrafabsPath + "/PanelLayout/PICOPanels.prefab";
+        CreatePrefab(in menuCommand, prefabPath, "[PICO UISet] PICOPanel");
+    }
 }
 #endif
