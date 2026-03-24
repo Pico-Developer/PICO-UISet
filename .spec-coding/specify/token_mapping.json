@@ -1,0 +1,43 @@
+{
+  "$description": "Figma node name to Design Token semantic name mapping",
+  "colors": {
+    "Primary/Default": "color.primary.default",
+    "Primary/Hover": "color.primary.hover",
+    "Primary/Pressed": "color.primary.pressed",
+    "Primary/Disabled": "color.primary.disabled",
+    "Surface/Background": "color.surface.background",
+    "Surface/Panel": "color.surface.panel",
+    "Surface/Elevated": "color.surface.elevated",
+    "Surface/Overlay": "color.surface.overlay",
+    "Text/Primary": "color.text.primary",
+    "Text/Secondary": "color.text.secondary",
+    "Text/Disabled": "color.text.disabled",
+    "Text/Inverse": "color.text.inverse",
+    "Border/Default": "color.border.default",
+    "Border/Focus": "color.border.focus",
+    "Border/Error": "color.border.error"
+  },
+  "typography": {
+    "Heading/XL": "typography.heading.xl",
+    "Heading/LG": "typography.heading.lg",
+    "Heading/MD": "typography.heading.md",
+    "Heading/SM": "typography.heading.sm",
+    "Body/LG": "typography.body.lg",
+    "Body/MD": "typography.body.md",
+    "Caption/MD": "typography.caption.md",
+    "Caption/SM": "typography.caption.sm"
+  },
+  "spacing": {
+    "Spacing/XS": "spacing.xs",
+    "Spacing/SM": "spacing.sm",
+    "Spacing/MD": "spacing.md",
+    "Spacing/LG": "spacing.lg",
+    "Spacing/XL": "spacing.xl",
+    "Spacing/XXL": "spacing.xxl",
+    "Radius/SM": "radius.sm",
+    "Radius/MD": "radius.md",
+    "Radius/LG": "radius.lg",
+    "Radius/XL": "radius.xl",
+    "Radius/Full": "radius.full"
+  }
+}
