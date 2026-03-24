@@ -1,39 +1,66 @@
-# ENV_CHECK — PICO UI 环境自检清单
+# Environment Check
 
-> 版本: 1.0.0 | 创建: 2026-03-24 | 状态: 生效中
+> 开发环境自检清单，确保 Spec Coding 工作流正常运行。
 
-## 变更日志
+## 检查项总览
 
-| 日期 | 版本 | 变更内容 | 变更人 |
-|------|------|---------|--------|
-| 2026-03-24 | 1.0.0 | 初始版本 | Spec Coding Init |
+| ID | 检查项 | 要求 | 检查方式 |
+|----|---------|------|----------|
+| ENV_001 | Unity 版本 | 2022.3 LTS (2022.3.x) | `Application.unityVersion` |
+| ENV_002 | 渲染管线 | URP | `GraphicsSettings.renderPipelineAsset` |
+| ENV_003 | XR Interaction Toolkit | v2.0.0+ | Package Manager 检查 |
+| ENV_004 | TextMeshPro | 已安装 | Package Manager 检查 |
+| ENV_005 | .NET 目标 | .NET Standard 2.1 | Player Settings |
+| ENV_006 | Color Space | Linear | Player Settings |
+| ENV_007 | Target Platform | Android (Quest/PICO) | Build Settings |
 
----
+## 详细说明
 
-## 自检项清单
+### ENV_001: Unity 版本
+- **最低版本**: 2022.3.0f1
+- **推荐版本**: 2022.3 最新 patch
+- **检查逻辑**: 解析 `Application.unityVersion` 确认主版本号为 2022.3
+- **失败处理**: 报错并终止，提示用户切换 Unity 版本
 
-ENV_001~ENV_007 详细定义见此文件完整版。
+### ENV_002: 渲染管线
+- **要求**: 必须使用 Universal Render Pipeline (URP)
+- **检查逻辑**: 检查 `GraphicsSettings.currentRenderPipeline` 类型是否为 `UniversalRenderPipelineAsset`
+- **失败处理**: 警告，部分功能可能异常
 
-### ENV_001: Canvas 存在性 (P0)
-检查场景中是否存在 Canvas。失败时自动创建。
+### ENV_003: XR Interaction Toolkit
+- **最低版本**: 2.0.0
+- **检查逻辑**: 通过 `UnityEditor.PackageManager.Client.List()` 检查 `com.unity.xr.interaction.toolkit`
+- **失败处理**: XR 相关组件功能受限，警告提示
 
-### ENV_002: CanvasScaler 配置 (P0)
-检查 UIScaleMode = ScaleWithScreenSize, referenceResolution = (1920, 1080)。
+### ENV_004: TextMeshPro
+- **检查逻辑**: 检查 `com.unity.textmeshpro` 包是否存在
+- **失败处理**: 文本渲染功能异常，报错
 
-### ENV_003: GraphicRaycaster (P0)
-检查 Canvas 上是否挂载 GraphicRaycaster。
+### ENV_005: .NET 目标
+- **要求**: .NET Standard 2.1 或 .NET Framework
+- **检查逻辑**: `PlayerSettings.GetApiCompatibilityLevel()`
+- **失败处理**: 警告，部分 API 可能不可用
 
-### ENV_004: EventSystem 存在性 (P0)
-检查场景中是否存在 EventSystem。当前 PICOUICreator.cs 缺失此检查。
+### ENV_006: Color Space
+- **要求**: Linear
+- **检查逻辑**: `PlayerSettings.colorSpace == ColorSpace.Linear`
+- **失败处理**: 警告，颜色表现可能与设计稿不一致
 
-### ENV_005: TextMeshPro 资源 (P1)
-检查 TMP Essential Resources 是否已导入。
+### ENV_007: Target Platform
+- **要求**: Android (PICO/Quest XR 平台)
+- **检查逻辑**: `EditorUserBuildSettings.activeBuildTarget == BuildTarget.Android`
+- **失败处理**: 仅警告，不阻断开发
 
-### ENV_006: XR Interaction Toolkit (P1)
-检查 com.unity.xr.interaction.toolkit >= 2.0.0。
+## 自检脚本用法
 
-### ENV_007: Canvas RenderMode (P2)
-检查 Canvas.renderMode 是否与当前平台匹配。
+```csharp
+// 在 Editor 中执行:
+// Menu: PICO UI > Spec Coding > Environment Check
+[MenuItem("PICO UI/Spec Coding/Environment Check")]
+public static void RunEnvCheck() {
+    // TODO: 实现 ENV_001 ~ ENV_007 检查
+}
+```
 
 ## 自检执行时机
 
