@@ -1,0 +1,29 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "PICO-UISet Color Tokens (placeholder values)",
+  "color": {
+    "primary": {
+      "default": { "$value": "#2B6EF6", "$type": "color" },
+      "hover": { "$value": "#1A5FE6", "$type": "color" },
+      "pressed": { "$value": "#0E4FD6", "$type": "color" },
+      "disabled": { "$value": "#2B6EF680", "$type": "color" }
+    },
+    "surface": {
+      "background": { "$value": "#1A1A2E", "$type": "color" },
+      "panel": { "$value": "#25253E", "$type": "color" },
+      "elevated": { "$value": "#2F2F4A", "$type": "color" },
+      "overlay": { "$value": "#00000080", "$type": "color" }
+    },
+    "text": {
+      "primary": { "$value": "#FFFFFFEE", "$type": "color" },
+      "secondary": { "$value": "#FFFFFFAA", "$type": "color" },
+      "disabled": { "$value": "#FFFFFF55", "$type": "color" },
+      "inverse": { "$value": "#1A1A2E", "$type": "color" }
+    },
+    "border": {
+      "default": { "$value": "#FFFFFF1A", "$type": "color" },
+      "focus": { "$value": "#2B6EF6", "$type": "color" },
+      "error": { "$value": "#F5222D", "$type": "color" }
+    }
+  }
+}

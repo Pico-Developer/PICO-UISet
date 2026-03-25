@@ -1,0 +1,19 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "$description": "PICO-UISet Spacing & Radius Tokens (placeholder values)",
+  "spacing": {
+    "xs": { "$value": 4, "$type": "dimension" },
+    "sm": { "$value": 8, "$type": "dimension" },
+    "md": { "$value": 12, "$type": "dimension" },
+    "lg": { "$value": 16, "$type": "dimension" },
+    "xl": { "$value": 24, "$type": "dimension" },
+    "xxl": { "$value": 32, "$type": "dimension" }
+  },
+  "radius": {
+    "sm": { "$value": 4, "$type": "dimension" },
+    "md": { "$value": 8, "$type": "dimension" },
+    "lg": { "$value": 12, "$type": "dimension" },
+    "xl": { "$value": 16, "$type": "dimension" },
+    "full": { "$value": 9999, "$type": "dimension" }
+  }
+}
