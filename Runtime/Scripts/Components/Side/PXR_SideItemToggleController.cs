@@ -21,7 +21,12 @@ public class PXR_SideItemToggleController : MonoBehaviour
     {
         if (group.transform.childCount <= 0) return;
         group.SetActive(toggle.isOn);
-        if (icon == null) return;
-        icon.transform.eulerAngles = toggle.isOn ? Vector3.back * 90f : Vector3.zero;
+        if (icon != null) icon.transform.eulerAngles = toggle.isOn ? Vector3.back * 90f : Vector3.zero;
+        Transform p = group.transform.parent;
+        while(p.TryGetComponent(out RectTransform rect))
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(rect);
+            p = p.parent;
+        }
     }
 }
