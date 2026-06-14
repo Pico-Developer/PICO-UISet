@@ -1,0 +1,31 @@
+.trae/hooks/session_usage_hook.py
+  1a7fbc761f7051b9 1-281
+.trae/hooks.json
+  1a7fbc761f7051b9 1-28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "9382a1e0d85332e8be4b672cbabfe41881207571",
+  "prompts": {
+    "1a7fbc761f7051b9": {
+      "agent_id": {
+        "tool": "trae",
+        "id": "6a100b2fc3c432cb4645b15b",
+        "model": "gpt-5.4__dev"
+      },
+      "human_author": "guokai <guokai.7784@bytedance.com>",
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 316,
+      "overriden_lines": 0
+    }
+  },
+  "humans": {
+    "h_57a43aa6e0cf64": {
+      "author": "guokai <guokai.7784@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
