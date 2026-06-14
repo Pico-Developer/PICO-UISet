@@ -1,0 +1,14 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "5059622186a854679cded193253a757872827968",
+  "prompts": {},
+  "humans": {
+    "h_57a43aa6e0cf64": {
+      "author": "guokai <guokai.7784@bytedance.com>"
+    }
+  },
+  "attestation_metadata": {},
+  "remote_transcripts": {}
+}
